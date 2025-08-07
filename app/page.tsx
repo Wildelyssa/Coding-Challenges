@@ -1,25 +1,16 @@
-import SolutionComponent from "./components/SolutionComponent";
-import { challenges } from "./data/challengeData";
-
-// To do=>
-//  Make navigable tabs or side menu for challenges
+import { Heading } from "@radix-ui/themes";
+import SideNavigation from "./components/navigation/SideNavigation";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <h1>Coding Challenges</h1>
-        {challenges.map((challenge, i) => (
-          <SolutionComponent
-            id={challenge.id}
-            title={challenge.title}
-            requirements={challenge.requirements}
-            solution={challenge.solution}
-            key={i}
-          />
-        ))}
+    <div className="font-sans grid grid-rows-[20px_1fr_20px] min-h-screen px-40 gap-16 sm:p-20">
+      <main className="flex flex-col gap-[32px] items-center justify-stretch">
+        <Heading as="h1">Coding Challenges</Heading>
+        <SideNavigation />
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center"></footer>
+      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
+        Footer
+      </footer>
     </div>
   );
 }

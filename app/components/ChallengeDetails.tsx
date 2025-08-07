@@ -1,3 +1,5 @@
+import { Flex, Heading } from "@radix-ui/themes";
+
 const ChallengeDetails = ({
   id,
   title,
@@ -8,15 +10,14 @@ const ChallengeDetails = ({
   requirements: string[];
 }) => {
   return (
-    // To do=> use challenge id for navigation references
-    <div id={id} className="flex flex-col">
-      <h2>{title}</h2>
+    <Flex id={id} direction="column" gap="4">
+      <Heading as="h2">{title}</Heading>
       <ul>
         {requirements.map((req, i) => (
           <li key={i}>{req}</li>
         ))}
       </ul>
-    </div>
+    </Flex>
   );
 };
 

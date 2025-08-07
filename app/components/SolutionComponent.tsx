@@ -1,8 +1,6 @@
+import { Card, Container, Flex, Heading, Separator } from "@radix-ui/themes";
 import { IChallengeDetails } from "../data/challengeData";
 import ChallengeDetails from "./ChallengeDetails";
-
-// To do=>
-// add styling for challenge wrapper
 
 const SolutionComponent = ({
   id,
@@ -11,11 +9,12 @@ const SolutionComponent = ({
   solution,
 }: IChallengeDetails) => {
   return (
-    <div className="flex flex-col">
-      <ChallengeDetails title={title} requirements={requirements} id={id} />
-      {solution()}
-      <hr></hr>
-    </div>
+    <Flex direction="column" gap="4">
+      <Card>
+        <ChallengeDetails title={title} requirements={requirements} id={id} />
+      </Card>
+      <Card>{solution()}</Card>
+    </Flex>
   );
 };
 
