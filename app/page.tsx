@@ -1,8 +1,8 @@
-import ChallengeDetails from "./components/ChallengeDetails";
+import SolutionComponent from "./components/SolutionComponent";
 import { challenges } from "./data/challengeData";
 
-// To do=> Need to style it- mostly to display code for solutions
-// consider how to present them better
+// To do=>
+//  Make navigable tabs or side menu for challenges
 
 export default function Home() {
   return (
@@ -10,13 +10,13 @@ export default function Home() {
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
         <h1>Coding Challenges</h1>
         {challenges.map((challenge, i) => (
-          <div key={i} className="flex flex-col">
-            <ChallengeDetails
-              title={challenge.title}
-              requirements={challenge.requirements}
-            />
-            {challenge.solution()}
-          </div>
+          <SolutionComponent
+            id={challenge.id}
+            title={challenge.title}
+            requirements={challenge.requirements}
+            solution={challenge.solution}
+            key={i}
+          />
         ))}
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center"></footer>
