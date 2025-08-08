@@ -1,16 +1,27 @@
 import { Heading } from "@radix-ui/themes";
 import SideNavigation from "./components/navigation/SideNavigation";
 
+// to do=> refine responsive styles
+//  find why favicon is not showing
+
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] min-h-screen px-40 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] items-center justify-stretch">
-        <Heading as="h1">Coding Challenges</Heading>
+    <div
+      style={{ backgroundColor: "var(--accent-1)" }}
+      className="flex flex-col font-sans h-screen gap-4"
+    >
+      <div className="flex flex-row items-center justify-center py-4">
+        <Heading align="center" as="h1">
+          Coding Challenges
+        </Heading>
+      </div>
+      <main className="flex h-full gap-8 mx-4 xl:w-[80%] self-center">
         <SideNavigation />
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        Footer
-      </footer>
+      <footer
+        style={{ backgroundColor: "var(--accent-4)" }}
+        className="h-[40px]"
+      />
     </div>
   );
 }
