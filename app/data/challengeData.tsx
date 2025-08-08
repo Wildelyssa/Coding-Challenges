@@ -27,9 +27,8 @@ export const challenges: IChallengeDetails[] = [
     id: "to-do-list",
     title: "Build a Todo List app with the following features:",
     requirements: [
-      "Filter the list to show: All todos, Only active (not completed), Only completed",
+      "Should be able to add or remove a todo from the list with an input box and add button",
       "Each todo item should display its text and a checkbox to toggle completion.",
-      "Three filter buttons: All, Active, and Completed to control which todos are shown.",
       "Use TypeScript interfaces/types where appropriate (e.g., Todo type).",
       "Use React hooks (useState, optionally useEffect).",
     ],

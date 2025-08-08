@@ -1,4 +1,4 @@
-import { Card, Container, Flex, Heading, Separator } from "@radix-ui/themes";
+import { Card, Flex } from "@radix-ui/themes";
 import { IChallengeDetails } from "../data/challengeData";
 import ChallengeDetails from "./ChallengeDetails";
 
@@ -9,11 +9,11 @@ const SolutionComponent = ({
   solution,
 }: IChallengeDetails) => {
   return (
-    <Flex direction="column" gap="4">
+    <Flex direction="column" gap="4" className="h-full">
       <Card>
         <ChallengeDetails title={title} requirements={requirements} id={id} />
       </Card>
-      <Card>{solution()}</Card>
+      <Card className="flex-1 overflow-auto">{solution()}</Card>
     </Flex>
   );
 };
