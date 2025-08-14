@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import TweetBox from "../components/solutions/TweetBox/TweetBox";
 import ToDoList from "../components/solutions/ToDo/ToDoList";
+import SearchableUsers from "../components/solutions/SearchableUsers/SearchableUsers";
 
 export type IChallengeDetails = {
   id: string;
@@ -33,5 +34,17 @@ export const challenges: IChallengeDetails[] = [
       "Use React hooks (useState, optionally useEffect).",
     ],
     solution: () => <ToDoList />,
+  },
+  {
+    id: "searchable-users",
+    title: `You’re building a simple “User Directory” component for an admin dashboard. It should:`,
+    requirements: [
+      "Display a list of users (provided as a prop) with their name and email.",
+      "Include a text input to filter users by name (case-insensitive).",
+      "If no users match, display an accessible “No results found” message.",
+      "Use Tailwind for styling.",
+      "Ensure the component is type-safe with TypeScript.",
+    ],
+    solution: () => <SearchableUsers />,
   },
 ];
