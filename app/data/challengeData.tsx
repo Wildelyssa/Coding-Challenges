@@ -2,11 +2,13 @@ import { ReactNode } from "react";
 import TweetBox from "../components/solutions/TweetBox/TweetBox";
 import ToDoList from "../components/solutions/ToDo/ToDoList";
 import SearchableUsers from "../components/solutions/SearchableUsers/SearchableUsers";
+import PaginatedCatList from "../components/solutions/PaginatedList/PaginatedCatList";
 
 export type IChallengeDetails = {
   id: string;
   title: string;
   requirements: string[];
+  details?: string[];
   solution: () => ReactNode;
 };
 
@@ -46,5 +48,26 @@ export const challenges: IChallengeDetails[] = [
       "Ensure the component is type-safe with TypeScript.",
     ],
     solution: () => <SearchableUsers />,
+  },
+  {
+    id: "paginated-list",
+    title: `Paginated List with 'Load More'. Create a component that:`,
+    requirements: [
+      "Displays a list of items in pages of 5 at a time.",
+      `Has a 'Load More' button to fetch and show the next page of items.`,
+      "Disables or hides the button when there are no more items to load.",
+      "Uses a mock async fetch function to simulate an API call with a small delay.",
+    ],
+    details: [
+      "Use functional components and React hooks.",
+      "Written in TypeScript with proper typing for props, state, and functions.",
+      "Use a hardcoded array of at least 20 strings (or objects if you want to model real data).",
+      "The “fetch” function should:",
+      "Accept page and pageSize arguments.",
+      "Return a Promise that resolves with the slice of data after a 500ms delay.",
+      "Show a loading state while fetching the next page.",
+      "The first page should load automatically when the component mounts.",
+    ],
+    solution: () => <PaginatedCatList />,
   },
 ];
