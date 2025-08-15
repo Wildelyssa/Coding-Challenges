@@ -2,20 +2,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 
-//   "Displays a list of items in pages of 5 at a time.",
-//   `Has a 'Load More' button to fetch and show the next page of items.`,
-//   "Disables or hides the button when there are no more items to load.",
-//   "Uses a mock async fetch function to simulate an API call with a small delay.",
-
-//   "Use functional components and React hooks.",
-//   "Written in TypeScript with proper typing for props, state, and functions.",
-//   "Use a hardcoded array of at least 20 strings (or objects if you want to model real data).",
-//   "The “fetch” function should:",
-//   "Accept page and pageSize arguments.",
-//   "Return a Promise that resolves with the slice of data after a 500ms delay.",
-//   "Show a loading state while fetching the next page.",
-//   "The first page should load automatically when the component mounts.",
-
 const PaginatedCatList = () => {
   // define types and consts needed
   type Item = string;
