@@ -4,6 +4,8 @@ import ToDoList from "../components/solutions/ToDo/ToDoList";
 import SearchableUsers from "../components/solutions/SearchableUsers/SearchableUsers";
 import PaginatedCatList from "../components/solutions/PaginatedList/PaginatedCatList";
 import ConnectFour from "../components/solutions/ConnectFour/ConnectFour";
+import SeatFinder from "../components/solutions/SeatFinder/SeatFinder";
+import PetCollector from "../components/solutions/PetCollector/PetCollector";
 
 export type IChallengeDetails = {
   id: string;
@@ -88,5 +90,28 @@ export const challenges: IChallengeDetails[] = [
       "Handle full columns gracefully.",
     ],
     solution: () => <ConnectFour />,
+  },
+  {
+    id: "seat-finder",
+    title: `Implement the handleBookSeat function using a for loop:`,
+    requirements: [
+      "Start at the last index of the array (row.length - 1)",
+      "Work backwards until you find the first null",
+      `Replace it with "X" and update the state`,
+    ],
+
+    solution: () => <SeatFinder />,
+  },
+  {
+    id: "pet-collector",
+    title: `You’re running a pet hotel with 10 kennels. Each kennel can hold Cat ("C"), Dog ("D"), Empty (null):`,
+    requirements: [
+      "Start with all kennels empty.",
+      `Add Cat button → put "C" into the first empty kennel from the left.`,
+      `Add Dog button → put "D" into the first empty kennel from the right.`,
+      `If no space is left for the animal, show a message ("No kennels left for cats!" or "No kennels left for dogs!")`,
+    ],
+
+    solution: () => <PetCollector />,
   },
 ];
