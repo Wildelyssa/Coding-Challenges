@@ -11,6 +11,8 @@ const PetCollector = () => {
   );
   const [message, setMessage] = useState("");
 
+  const disabled = !kennels.includes(null);
+
   // add cats from the left
   function addCat() {
     for (let i = 0; i < kennels.length; i++) {
@@ -30,7 +32,7 @@ const PetCollector = () => {
 
   // add dogs from the right
   function addDog() {
-    for (let i = kennels.length - 1; 1 >= 0; i--) {
+    for (let i = kennels.length - 1; i >= 0; i--) {
       if (kennels[i] === null) {
         // clone array
         const newKennelsArray = [...kennels];
@@ -66,12 +68,14 @@ const PetCollector = () => {
 
       <div className="mt-4 flex gap-2">
         <button
+          disabled={disabled}
           onClick={addCat}
           className="bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600 hover:cursor-pointer"
         >
           Add Cat (Left)
         </button>
         <button
+          disabled={disabled}
           onClick={addDog}
           className="bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600 hover:cursor-pointer"
         >
