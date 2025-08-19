@@ -3,12 +3,14 @@ import TweetBox from "../components/solutions/TweetBox/TweetBox";
 import ToDoList from "../components/solutions/ToDo/ToDoList";
 import SearchableUsers from "../components/solutions/SearchableUsers/SearchableUsers";
 import PaginatedCatList from "../components/solutions/PaginatedList/PaginatedCatList";
+import ConnectFour from "../components/solutions/ConnectFour/ConnectFour";
 
 export type IChallengeDetails = {
   id: string;
   title: string;
   requirements: string[];
   details?: string[];
+  bonus?: string[];
   solution: () => ReactNode;
 };
 
@@ -69,5 +71,22 @@ export const challenges: IChallengeDetails[] = [
       "The first page should load automatically when the component mounts.",
     ],
     solution: () => <PaginatedCatList />,
+  },
+  {
+    id: "connect-four",
+    title: `Build a simple 6x7 grid Connect Four game where two players take turns dropping pieces into columns:`,
+    requirements: [
+      "The board should start as empty (null values).",
+      "Players take turns: Red → Yellow → Red → …",
+      "Detect when a player wins (4 in a row horizontally, vertically, or diagonally).",
+      `When the game ends, show a message: "Red wins!" or "Yellow wins!"`,
+      "Add a reset button to clear the board.",
+    ],
+    bonus: [
+      "Highlight the winning cells.",
+      "Prevent moves after the game ends.",
+      "Handle full columns gracefully.",
+    ],
+    solution: () => <ConnectFour />,
   },
 ];
