@@ -1,4 +1,5 @@
 "use client";
+import { cn } from "@/app/lib/utils";
 import React, { useState } from "react";
 
 const PetCollector = () => {
@@ -10,8 +11,9 @@ const PetCollector = () => {
     Array<Animal>(TOTAL_KENNELS).fill(null)
   );
   const [message, setMessage] = useState("");
+  const [isFull, setIsFull] = useState<boolean>(false);
 
-  const disabled = !kennels.includes(null);
+  const noRoomMessage = "No more rooms left!";
 
   // add cats from the left
   function addCat() {
@@ -23,11 +25,13 @@ const PetCollector = () => {
         newKennelsArray[i] = "C";
         setKennels(newKennelsArray);
         setMessage("Dasa Cat 🐱");
+        setIsFull(false);
         // break after one successful pass
         return;
       }
     }
-    setMessage("No more rooms left for Cats!");
+    setMessage(noRoomMessage);
+    setIsFull(true);
   }
 
   // add dogs from the right
@@ -40,11 +44,13 @@ const PetCollector = () => {
         newKennelsArray[i] = "D";
         setKennels(newKennelsArray);
         setMessage("Dasa Dog 🐶");
+        setIsFull(false);
         // break after one successful pass
         return;
       }
     }
-    setMessage("No more rooms left for Dogs!");
+    setMessage(noRoomMessage);
+    setIsFull(true);
   }
 
   return (
@@ -68,16 +74,22 @@ const PetCollector = () => {
 
       <div className="mt-4 flex gap-2">
         <button
-          disabled={disabled}
+          disabled={isFull}
           onClick={addCat}
-          className="bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600 hover:cursor-pointer"
+          className={cn(
+            "bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600 hover:cursor-pointer",
+            isFull && "opacity-50 hover:bg-pink-500 hover:cursor-not-allowed"
+          )}
         >
           Add Cat (Left)
         </button>
         <button
-          disabled={disabled}
+          disabled={isFull}
           onClick={addDog}
-          className="bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600 hover:cursor-pointer"
+          className={cn(
+            "bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600 hover:cursor-pointer",
+            isFull && "opacity-50 hover:bg-purple-500 hover:cursor-not-allowed"
+          )}
         >
           Add Dog (Right)
         </button>
