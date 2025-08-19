@@ -4,6 +4,7 @@ import ToDoList from "../components/solutions/ToDo/ToDoList";
 import SearchableUsers from "../components/solutions/SearchableUsers/SearchableUsers";
 import PaginatedCatList from "../components/solutions/PaginatedList/PaginatedCatList";
 import ConnectFour from "../components/solutions/ConnectFour/ConnectFour";
+import SeatFinder from "../components/solutions/SeatFinder/SeatFinder";
 
 export type IChallengeDetails = {
   id: string;
@@ -88,5 +89,16 @@ export const challenges: IChallengeDetails[] = [
       "Handle full columns gracefully.",
     ],
     solution: () => <ConnectFour />,
+  },
+  {
+    id: "seat-finder",
+    title: `Implement the handleBookSeat function using a for loop:`,
+    requirements: [
+      "Start at the last index of the array (row.length - 1)",
+      "Work backwards until you find the first null",
+      `Replace it with "X" and update the state`,
+    ],
+
+    solution: () => <SeatFinder />,
   },
 ];
