@@ -12,11 +12,11 @@ const ChallengeDetails = ({
   return (
     <Flex id={id} direction="column" gap="4">
       <Heading as="h2">{title}</Heading>
-      <ul>
+      <ol style={{ listStyle: "inside" }}>
         {requirements.map((req, i) => (
           <li key={i}>{req}</li>
         ))}
-      </ul>
+      </ol>
     </Flex>
   );
 };

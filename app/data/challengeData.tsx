@@ -6,6 +6,7 @@ import PaginatedCatList from "../components/solutions/PaginatedList/PaginatedCat
 import ConnectFour from "../components/solutions/ConnectFour/ConnectFour";
 import SeatFinder from "../components/solutions/SeatFinder/SeatFinder";
 import PetCollector from "../components/solutions/PetCollector/PetCollector";
+import EventsList from "../components/solutions/EventsList/EventsList";
 
 export type IChallengeDetails = {
   id: string;
@@ -113,5 +114,17 @@ export const challenges: IChallengeDetails[] = [
     ],
 
     solution: () => <PetCollector />,
+  },
+  {
+    id: "events-list",
+    title: `You are given an array of event objects. Each event has a title, date, and location. Your task is to`,
+    requirements: [
+      "Render a list of upcoming events sorted by date (soonest first).",
+      `Display each event with its title, formatted date (e.g., "Aug 30, 2025"), and location.`,
+      `Add a filter input to only show events where the title includes the entered text (case-insensitive).`,
+      `(Optional Bonus: Add a message if no events match the filter.)`,
+    ],
+
+    solution: () => <EventsList />,
   },
 ];
