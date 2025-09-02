@@ -7,6 +7,7 @@ import ConnectFour from "../components/solutions/ConnectFour/ConnectFour";
 import SeatFinder from "../components/solutions/SeatFinder/SeatFinder";
 import PetCollector from "../components/solutions/PetCollector/PetCollector";
 import EventsList from "../components/solutions/EventsList/EventsList";
+import FetchUsers from "../components/solutions/FetchUsers/FetchUsers";
 
 export type IChallengeDetails = {
   id: string;
@@ -117,7 +118,7 @@ export const challenges: IChallengeDetails[] = [
   },
   {
     id: "events-list",
-    title: `You are given an array of event objects. Each event has a title, date, and location. Your task is to`,
+    title: `You are given an array of event objects. Each event has a title, date, and location. Your task is to:`,
     requirements: [
       "Render a list of upcoming events sorted by date (soonest first).",
       `Display each event with its title, formatted date (e.g., "Aug 30, 2025"), and location.`,
@@ -126,5 +127,21 @@ export const challenges: IChallengeDetails[] = [
     ],
 
     solution: () => <EventsList />,
+  },
+  {
+    id: "fetch-users",
+    title: `You are given an API endpoint that returns a list of users (for practice, you can use https://jsonplaceholder.typicode.com/users).`,
+    requirements: [
+      "Fetch users on component mount (use useEffect).",
+      `Display them in a simple list/table with: Name, Email, Company name.`,
+      `Add a search input that filters users by name or email (case-insensitive).`,
+      `Add a sort dropdown that lets you sort by: Name (A → Z, Z → A), Company name (A → Z, Z → A). (Hint: use useMemo to avoid unnecessary recalculations when filtering/sorting.)`,
+    ],
+    bonus: [
+      "Use useCallback for handlers to avoid unnecessary re-renders.",
+      "Implement pagination (client-side).",
+      "Add a loading and error state for the API call.",
+    ],
+    solution: () => <FetchUsers />,
   },
 ];
