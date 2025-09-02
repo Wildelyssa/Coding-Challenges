@@ -1,8 +1,7 @@
 import { Heading } from "@radix-ui/themes";
 import SideNavigation from "./components/navigation/SideNavigation";
 
-// to do=> refine responsive styles
-//  find why favicon is not showing
+// to do=> responsive styles for mobile
 
 export default function Home() {
   return (

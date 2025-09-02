@@ -25,7 +25,33 @@ Key points:
 React.useEffect(() => {
   console.log("Effect ran");
   return () => console.log("Cleanup");
-}, [dependency]); // [] = run once, omitted = run every render
+}, [dependency]);
+```
+
+# Some pitfalls of useEffect and correct usage
+
+- Without a dependency array
+
+```ts
+useEffect(() => {
+  // This runs after every render
+});
+```
+
+- With an empty dependency array
+
+```ts
+useEffect(() => {
+  // This runs only on mount (when the component appears)
+}, []);
+```
+
+- With a dependency array containing dependencies
+
+```ts
+useEffect(() => {
+  // This runs on mount *and also* if either a or b have changed since the last render
+}, [a, b]);
 ```
 
 Key points:

@@ -14,11 +14,11 @@ const SideNavigation = () => {
       <Card className="h-full flex-shrink-0">
         <Tabs.List
           color="crimson"
-          className="flex flex-col gap-2 h-full"
+          className="flex flex-col gap-2 w-full"
           highContrast
         >
           {navLinks.map((navLink, i) => (
-            <Tabs.Trigger className="w-full" key={i} value={navLink.id}>
+            <Tabs.Trigger key={i} value={navLink.id}>
               {capitalizeAll(navLink.name)}
             </Tabs.Trigger>
           ))}
