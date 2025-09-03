@@ -130,17 +130,18 @@ export const challenges: IChallengeDetails[] = [
   },
   {
     id: "fetch-users",
-    title: `You are given an API endpoint that returns a list of users (for practice, you can use https://jsonplaceholder.typicode.com/users).`,
+    title: `You are given an API endpoint that returns a list of users- use https://jsonplaceholder.typicode.com/users).`,
     requirements: [
       "Fetch users on component mount (use useEffect).",
       `Display them in a simple list/table with: Name, Email, Company name.`,
       `Add a search input that filters users by name or email (case-insensitive).`,
-      `Add a sort dropdown that lets you sort by: Name (A → Z, Z → A), Company name (A → Z, Z → A). (Hint: use useMemo to avoid unnecessary recalculations when filtering/sorting.)`,
+      `Add a sort dropdown that lets you sort by: Name (A → Z, Z → A), Company name (A → Z, Z → A). Use useMemo to avoid unnecessary recalculations when filtering/sorting.`,
     ],
     bonus: [
       "Use useCallback for handlers to avoid unnecessary re-renders.",
-      "Implement pagination (client-side).",
       "Add a loading and error state for the API call.",
+      "Add a skeleton loader or spinner for loading state.",
+      "Add a retry button for error state.",
     ],
     solution: () => <FetchUsers />,
   },
