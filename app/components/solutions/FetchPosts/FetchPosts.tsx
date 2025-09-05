@@ -53,7 +53,7 @@ const FetchPosts = () => {
 
   useEffect(() => {
     fetchPosts();
-  }, [fetchPosts, page]);
+  }, [fetchPosts]);
 
   const pageButtonClasses =
     "bg-pink-500 hover:bg-pink-600 hover:cursor-pointer rounded-md p-2 text-white/90 disabled:opacity-50 disabled:hover:bg-pink-500 font-bold min-w-[120px]";
