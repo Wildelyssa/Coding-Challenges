@@ -8,6 +8,7 @@ import SeatFinder from "../components/solutions/SeatFinder/SeatFinder";
 import PetCollector from "../components/solutions/PetCollector/PetCollector";
 import EventsList from "../components/solutions/EventsList/EventsList";
 import FetchUsers from "../components/solutions/FetchUsers/FetchUsers";
+import FetchPosts from "../components/solutions/FetchPosts/FetchPosts";
 
 export type IChallengeDetails = {
   id: string;
@@ -144,5 +145,17 @@ export const challenges: IChallengeDetails[] = [
       "Add a retry button for error state.",
     ],
     solution: () => <FetchUsers />,
+  },
+  {
+    id: "fetch-posts",
+    title: `Build a React component that fetches posts from the JSONPlaceholder API (https://jsonplaceholder.typicode.com/posts) and lets the user:`,
+    requirements: [
+      "View posts (title + body).",
+      `Paginate through them (e.g., 10 per page, with "Next" and "Previous" buttons).`,
+      `Filter by userId (add a dropdown with numbers 1–10, since posts have userIds 1–10).`,
+      `Handle loading and error states.`,
+      `Add a "Retry" button on errors`,
+    ],
+    solution: () => <FetchPosts />,
   },
 ];
